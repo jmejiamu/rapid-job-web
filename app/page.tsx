@@ -560,6 +560,16 @@ export default function Home() {
                         Careers
                       </a>
                     </li>
+                    <li>
+                      <a
+                        href="https://www.linkedin.com/company/rapid-jobs-app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-white"
+                      >
+                        LinkedIn
+                      </a>
+                    </li>
                   </ul>
                 </div>
                 <div>
