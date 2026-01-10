@@ -100,16 +100,26 @@ export default function Home() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-visible bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-white">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-indigo-500/18 blur-3xl" />
-        <div className="absolute bottom-8 right-6 h-80 w-80 rounded-full bg-emerald-500/8 blur-3xl" />
+    <div className="relative min-h-screen overflow-visible bg-gradient-to-br from-white via-slate-50 to-sky-50 text-slate-900 antialiased">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-48 left-[18%] h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-indigo-500/20 blur-[140px]" />
+        <div className="absolute bottom-10 right-0 h-[26rem] w-[26rem] translate-x-1/4 rounded-full bg-emerald-500/15 blur-[140px]" />
+        <div
+          className="absolute inset-0 opacity-15"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(0deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
+            backgroundSize: "90px 90px",
+          }}
+        />
+        <div className="absolute inset-x-0 top-1/3 h-96 bg-gradient-to-b from-indigo-500/15 via-transparent to-transparent blur-3xl" />
+        <div className="absolute inset-x-0 bottom-0 h-80 bg-gradient-to-t from-emerald-500/20 via-transparent to-transparent blur-3xl" />
       </div>
 
-      <div className="relative mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-4 py-12">
+      <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         {/* HEADER -> sticky navigation */}
-        <header className="mb-8 sticky top-0 z-50 bg-gradient-to-b from-slate-900/40 to-transparent backdrop-blur-md">
-          <nav className="flex items-center justify-between px-2 py-3">
+        <header className="sticky top-6 z-50 mb-10">
+          <nav className="flex items-center justify-between rounded-2xl border border-slate-200/40 bg-white/90 px-4 py-3 shadow-sm sm:px-6">
             <div className="flex items-center gap-3">
               <div className="h-12 w-12 rounded-2xl shadow-md grid place-items-center overflow-hidden bg-transparent">
                 <Image
@@ -121,35 +131,47 @@ export default function Home() {
                 />
               </div>
               <div>
-                <h1 className="text-2xl font-extrabold tracking-tight text-white">
+                <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">
                   Rapid Job
                 </h1>
-                <p className="text-xs text-white/70">
+                <p className="text-xs text-slate-600">
                   Small gigs. Fast pay. No resume required.
                 </p>
               </div>
             </div>
 
             {/* Desktop nav - with language toggle */}
-            <div className="hidden sm:flex items-center gap-4 text-sm text-white/80">
-              <a href="#" className="px-2 py-1 rounded hover:text-white">
+            <div className="hidden sm:flex items-center gap-4 text-sm text-slate-600">
+              <a
+                href="#"
+                className="px-2 py-1 rounded transition-colors duration-150 hover:text-slate-900"
+              >
                 {t("nav.home")}
               </a>
-              <a href="#how" className="px-2 py-1 rounded hover:text-white">
+              <a
+                href="#how"
+                className="px-2 py-1 rounded transition-colors duration-150 hover:text-slate-900"
+              >
                 {t("nav.how")}
               </a>
-              <a href="#about" className="px-2 py-1 rounded hover:text-white">
+              <a
+                href="#about"
+                className="px-2 py-1 rounded transition-colors duration-150 hover:text-slate-900"
+              >
                 {t("nav.about")}
               </a>
-              <a href="#help" className="px-2 py-1 rounded hover:text-white">
+              <a
+                href="#help"
+                className="px-2 py-1 rounded transition-colors duration-150 hover:text-slate-900"
+              >
                 {t("nav.help")}
               </a>
 
-              <div className="ml-2 inline-flex items-center gap-2 rounded-full bg-white/6 p-1">
+              <div className="ml-2 inline-flex items-center gap-2 rounded-full bg-slate-100/60 p-1">
                 <button
                   onClick={() => setLocale("en")}
                   className={`px-2 py-1 rounded text-xs ${
-                    locale === "en" ? "bg-white/10" : ""
+                    locale === "en" ? "bg-slate-200/60" : ""
                   }`}
                 >
                   EN
@@ -157,7 +179,7 @@ export default function Home() {
                 <button
                   onClick={() => setLocale("es")}
                   className={`px-2 py-1 rounded text-xs ${
-                    locale === "es" ? "bg-white/10" : ""
+                    locale === "es" ? "bg-slate-200/60" : ""
                   }`}
                 >
                   ES
@@ -176,7 +198,7 @@ export default function Home() {
             <div className="sm:hidden">
               <button
                 aria-label="Open menu"
-                className="rounded-md bg-white/6 px-3 py-2 text-sm"
+                className="rounded-md bg-slate-100/60 px-3 py-2 text-sm text-slate-800"
               >
                 Menu
               </button>
@@ -184,16 +206,29 @@ export default function Home() {
           </nav>
         </header>
 
-        <main className="grid gap-6 sm:gap-8">
+        <main className="grid gap-8 lg:gap-10">
           {/* Left column (hero / waitlist) */}
-          <section className="p-6">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <section className="relative overflow-hidden p-6 sm:p-8">
+            <div className="pointer-events-none absolute inset-0">
+              <div
+                className="absolute inset-0 opacity-10"
+                style={{
+                  backgroundImage:
+                    "linear-gradient(120deg, rgba(0,0,0,0.02) 1px, transparent 1px)",
+                  backgroundSize: "180px 180px",
+                }}
+              />
+              <div className="absolute -right-12 top-12 h-40 w-40 rounded-full bg-emerald-200/40 blur-[120px]" />
+              <div className="absolute -left-16 bottom-0 h-48 w-48 rounded-full bg-indigo-100/40 blur-[140px]" />
+            </div>
+
+            <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start">
               <div className="max-w-xl">
-                <p className="text-sm uppercase tracking-[0.3em] text-indigo-200">
+                <p className="text-sm uppercase tracking-[0.3em] text-indigo-600">
                   {t("hero.beta")}
                 </p>
                 <h2
-                  className={`mt-2 font-extrabold leading-tight text-white transition-all duration-700 ease-out
+                  className={`mt-2 font-extrabold leading-tight text-slate-900 transition-all duration-700 ease-out
                     ${
                       mounted
                         ? "opacity-100 translate-y-0"
@@ -205,59 +240,32 @@ export default function Home() {
                 </h2>
 
                 {/* Updated hero copy: emphasize phone signup and chat */}
-                <p className="mt-3 text-sm text-white/70">
+                <p className="mt-3 text-sm text-slate-700">
                   {t("hero.subtitle")}
                 </p>
 
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <span className="inline-flex items-center gap-2 rounded-full bg-white/6 px-3 py-1 text-xs font-medium text-white/90 shadow-sm">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-slate-100/70 px-3 py-1 text-xs font-medium text-slate-900 shadow-sm">
                     {t("hero.pill.quick")}
                   </span>
-                  <span className="inline-flex items-center gap-2 rounded-full bg-white/6 px-3 py-1 text-xs font-medium text-white/90 shadow-sm">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-slate-100/70 px-3 py-1 text-xs font-medium text-slate-900 shadow-sm">
                     {t("hero.pill.cash")}
                   </span>
-                  <span className="inline-flex items-center gap-2 rounded-full bg-white/6 px-3 py-1 text-xs font-medium text-white/90 shadow-sm">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-slate-100/70 px-3 py-1 text-xs font-medium text-slate-900 shadow-sm">
                     {t("hero.pill.phone")}
                   </span>
-                  <span className="inline-flex items-center gap-2 rounded-full bg-white/6 px-3 py-1 text-xs font-medium text-white/90 shadow-sm">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-slate-100/70 px-3 py-1 text-xs font-medium text-slate-900 shadow-sm">
                     {t("hero.pill.chat")}
                   </span>
-                </div>
-              </div>
-
-              <div className="mt-4 sm:mt-0">
-                {/* subtle mock phone card — now shows chat preview */}
-                <div className="hidden sm:block rounded-2xl bg-gradient-to-br from-slate-900/60 to-slate-900/40 p-3 shadow-xl">
-                  <div className="w-36 rounded-xl bg-gradient-to-b from-slate-800/60 to-transparent p-3">
-                    <div className="h-48 w-full rounded-lg bg-black/40 p-3 flex flex-col justify-between">
-                      <div>
-                        <div className="h-3 w-16 rounded-full bg-white/10 mb-2" />
-                        <div className="space-y-2">
-                          <div className="h-4 w-28 rounded bg-white/8" />
-                          <div className="h-3 w-20 rounded bg-white/6" />
-                        </div>
-                      </div>
-
-                      {/* Chat preview */}
-                      <div className="mt-2">
-                        <div className="mb-2 rounded-lg bg-white/10 px-2 py-1 text-xs text-white/90 max-w-[14rem]">
-                          Worker: Hi — can you confirm the time?
-                        </div>
-                        <div className="rounded-lg bg-emerald-500/20 px-2 py-1 text-xs text-white max-w-[10rem] self-end">
-                          You: 10am works 👍
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
 
             <form
               onSubmit={handleSubmit}
-              className="mt-6 flex w-full flex-col gap-3 sm:flex-row"
+              className="mt-8 grid w-full gap-3 sm:grid-cols-[minmax(0,1fr)_auto]"
             >
-              <div className="flex-1 rounded-2xl border border-white/12 bg-black/30 px-4 py-3 flex items-center gap-3">
+              <div className="flex flex-1 items-center gap-3 rounded-2xl border border-slate-200/40 bg-white/90 px-4 py-3 shadow-inner shadow-black/5 transition focus-within:border-emerald-300/40">
                 <svg
                   className="h-5 w-5 text-white/60"
                   viewBox="0 0 24 24"
@@ -286,14 +294,14 @@ export default function Home() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={t("hero.placeholder")}
-                  className="w-full bg-transparent text-sm text-white placeholder:text-white/40 outline-none"
+                  className="w-full bg-transparent text-sm text-slate-900 placeholder:text-slate-400 outline-none"
                   required
                 />
               </div>
               <button
                 type="submit"
                 disabled={loading}
-                className="h-12 w-full sm:w-auto rounded-2xl bg-gradient-to-r from-emerald-400 via-indigo-400 to-sky-500 px-6 text-sm font-semibold text-slate-900 transition hover:shadow-2xl disabled:opacity-60"
+                className="h-12 w-full rounded-2xl bg-gradient-to-r from-emerald-400 via-indigo-400 to-sky-500 px-6 text-sm font-semibold text-slate-900 shadow-[0_15px_50px_rgba(16,185,129,0.4)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_25px_65px_rgba(14,165,233,0.5)] disabled:translate-y-0 disabled:opacity-60 sm:w-auto"
               >
                 {loading ? t("hero.joining") : t("hero.join")}
               </button>
@@ -301,22 +309,22 @@ export default function Home() {
 
             {message && (
               <p
-                className={`mt-4 text-sm ${
+                className={`mt-4 rounded-2xl border px-4 py-2 text-sm ${
                   message.type === "success"
-                    ? "text-emerald-300"
-                    : "text-rose-300"
+                    ? "border-emerald-400/30 bg-emerald-400/10 text-emerald-200"
+                    : "border-rose-400/30 bg-rose-400/10 text-rose-200"
                 }`}
               >
                 {message.text}
               </p>
             )}
 
-            <footer className="mt-8 flex flex-col gap-4 text-xs text-white/70 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex items-center gap-3">
+            <footer className="mt-8 flex flex-col gap-4 rounded-2xl border border-slate-200/40 bg-white/80 p-4 text-xs text-slate-700 shadow-inner shadow-black/5 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-wrap items-center gap-3">
                 <a
                   href="#download"
                   aria-label={t("download.appstore")}
-                  className="inline-flex items-center gap-2 rounded-lg bg-white/6 px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10"
+                  className="inline-flex items-center gap-2 rounded-lg bg-slate-100/60 px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-100"
                 >
                   <span className="text-xl"></span>
                   <span>{t("download.appstore")}</span>
@@ -324,13 +332,20 @@ export default function Home() {
                 <a
                   href="#download"
                   aria-label={t("download.playstore")}
-                  className="inline-flex items-center gap-2 rounded-lg bg-white/6 px-4 py-2 text-sm font-medium text-white/90 hover:bg-white/10"
+                  className="inline-flex items-center gap-2 rounded-lg bg-slate-100/60 px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-100"
                 >
-                  <span className="text-xl">▶️</span>
+                  <span className="text-xl">
+                    <Image
+                      src="/google-play-icons.png"
+                      alt="Play Store"
+                      width={20}
+                      height={20}
+                    />
+                  </span>
                   <span>{t("download.playstore")}</span>
                 </a>
               </div>
-              <div className="rounded-full border border-white/10 px-4 py-2 text-white/80">
+              <div className="rounded-full border border-slate-200/60 px-4 py-2 text-slate-700">
                 • 5k+ workers
               </div>
             </footer>
@@ -338,28 +353,34 @@ export default function Home() {
         </main>
 
         {/* How it works (update steps) */}
-        <section id="how" className="mt-10 p-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <section id="how" className="relative mt-10 overflow-hidden p-6 sm:p-8">
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+            <div className="absolute inset-0 opacity-[0.08]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,70,229,0.35),_transparent_50%)]" />
+            </div>
+          </div>
+          <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-white/70">
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200/40 bg-slate-100/60 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-slate-700">
                 Flow
                 <span className="h-1 w-1 rounded-full bg-emerald-400" />
                 Guided
               </span>
-              <h3 className="mt-4 text-2xl font-semibold text-white">
+              <h3 className="mt-4 text-2xl font-semibold text-slate-900">
                 {t("how.title")}
               </h3>
-              <p className="mt-2 text-sm text-white/70">{t("how.subtitle")}</p>
+              <p className="mt-2 text-sm text-slate-700">{t("how.subtitle")}</p>
             </div>
 
-            <div className="flex flex-wrap gap-2 text-xs text-white/70">
-              <span className="rounded-full bg-slate-900/40 px-3 py-1">
+            <div className="flex flex-wrap gap-2 text-xs text-slate-700">
+              <span className="rounded-full border border-slate-200/40 bg-slate-100/60 px-3 py-1">
                 📍 Local jobs
               </span>
-              <span className="rounded-full bg-slate-900/40 px-3 py-1">
+              <span className="rounded-full border border-slate-200/40 bg-slate-100/60 px-3 py-1">
                 🔔 Instant alerts
               </span>
-              <span className="rounded-full bg-slate-900/40 px-3 py-1">
+              <span className="rounded-full border border-slate-200/40 bg-slate-100/60 px-3 py-1">
                 🛡️ Safe messaging
               </span>
             </div>
@@ -373,23 +394,23 @@ export default function Home() {
 
             <div className="relative grid gap-4 sm:grid-cols-3">
               {steps.map((step) => (
-                <div
-                  key={step.title}
-                  className="group relative rounded-2xl border border-white/10 bg-gradient-to-b from-white/4 via-white/0 to-transparent p-5 backdrop-blur"
-                >
+                <div key={step.title} className="group relative p-5">
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition duration-300 group-hover:opacity-100">
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 via-transparent to-emerald-400/20" />
+                  </div>
                   <div
-                    className={`h-14 w-14 rounded-2xl bg-gradient-to-br ${step.accent} text-2xl grid place-items-center shadow-lg`}
+                    className={`grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br ${step.accent} text-2xl shadow-lg shadow-black/40`}
                   >
                     {step.emoji}
                   </div>
                   <div className="mt-4">
-                    <p className="text-[11px] uppercase tracking-[0.2em] text-white/60">
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-slate-600">
                       {step.label}
                     </p>
-                    <p className="text-lg font-semibold text-white">
+                    <p className="text-lg font-semibold text-slate-900">
                       {step.title}
                     </p>
-                    <p className="mt-2 text-sm text-white/70">
+                    <p className="mt-2 text-sm text-slate-700">
                       {step.description}
                     </p>
                   </div>
@@ -397,7 +418,7 @@ export default function Home() {
                     {step.highlights.map((item) => (
                       <span
                         key={item}
-                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-white/70"
+                        className="rounded-full border border-slate-200/40 bg-slate-100/60 px-3 py-1 text-[11px] text-slate-700"
                       >
                         {item}
                       </span>
@@ -410,42 +431,49 @@ export default function Home() {
         </section>
 
         {/* About section - redesigned */}
-        <section id="about" className="mt-10 p-6">
-          <div className="grid gap-10 lg:grid-cols-2">
+        <section
+          id="about"
+          className="relative mt-10 overflow-hidden p-6 sm:p-8"
+        >
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/10 via-transparent to-transparent" />
+            <div className="absolute -bottom-24 right-0 h-48 w-48 rounded-full bg-emerald-500/20 blur-[120px]" />
+          </div>
+          <div className="relative grid gap-10 lg:grid-cols-2">
             <div className="space-y-4">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-white/70">
+              <span className="inline-flex items-center gap-2 rounded-full border border-slate-200/40 bg-slate-100/60 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-slate-700">
                 About
                 <span className="h-1 w-1 rounded-full bg-emerald-400" />
                 Rapid Job
               </span>
-              <h3 className="text-3xl font-semibold text-white">
+              <h3 className="text-3xl font-semibold text-slate-900">
                 {t("about.title")}
               </h3>
               <div className="mt-3 inline-flex items-center gap-3 rounded-full bg-amber-400/10 px-3 py-1 text-xs text-amber-200">
                 <span className="text-lg leading-none">🇸🇻</span>
                 <span className="text-sm">{t("about.launch")}</span>
               </div>
-              <p className="text-sm text-white/70 leading-relaxed">
+              <p className="text-sm text-slate-700 leading-relaxed">
                 {t("about.p1")}
               </p>
 
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <div className="flex flex-col gap-4 rounded-2xl border border-slate-200/40 bg-slate-50 p-4 sm:flex-row sm:items-center">
                 <div>
-                  <p className="text-3xl font-semibold text-white">5k+</p>
-                  <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+                  <p className="text-3xl font-semibold text-slate-900">5k+</p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-slate-600">
                     Workers
                   </p>
                 </div>
-                <div className="hidden h-10 w-px bg-white/10 sm:block" />
+                <div className="hidden h-10 w-px bg-white/15 sm:block" />
                 <div>
-                  <p className="text-3xl font-semibold text-white">120+</p>
-                  <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+                  <p className="text-3xl font-semibold text-slate-900">120+</p>
+                  <p className="text-xs uppercase tracking-[0.3em] text-slate-600">
                     Weekly gigs
                   </p>
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-white/80">
+              <div className="rounded-2xl border-l-4 border-emerald-400/60 bg-slate-50 p-5 text-sm text-slate-700 shadow-[0_10px_30px_rgba(2,6,23,0.04)]">
                 “We created Rapid Job so everyday people can request help in a
                 few taps while giving workers dependable income without
                 red-tape.”
@@ -454,24 +482,22 @@ export default function Home() {
 
             <div className="grid gap-4">
               {aboutHighlights.map((item) => (
-                <div
-                  key={item.title}
-                  className="rounded-2xl border border-white/10 bg-gradient-to-br from-slate-950/60 via-slate-900/40 to-transparent p-5"
-                >
-                  <p className="text-[11px] uppercase tracking-[0.3em] text-white/60">
+                <div key={item.title} className="group relative p-5">
+                  <div className="pointer-events-none absolute inset-0 rounded-2xl border border-slate-100/40 opacity-0 transition duration-300 group-hover:opacity-100" />
+                  <p className="text-[11px] uppercase tracking-[0.3em] text-slate-600">
                     {item.label}
                   </p>
-                  <h4 className="mt-2 text-xl font-semibold text-white">
+                  <h4 className="mt-2 text-xl font-semibold text-slate-900">
                     {item.title}
                   </h4>
-                  <p className="mt-2 text-sm text-white/70">
+                  <p className="mt-2 text-sm text-slate-700">
                     {item.description}
                   </p>
-                  <div className="mt-3 flex flex-wrap gap-2 text-xs text-white/70">
+                  <div className="mt-3 flex flex-wrap gap-2 text-xs text-slate-700">
                     {item.badges.map((badge) => (
                       <span
                         key={badge}
-                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1"
+                        className="rounded-full border border-slate-200/40 bg-slate-100/60 px-3 py-1 text-slate-700"
                       >
                         {badge}
                       </span>
@@ -480,11 +506,11 @@ export default function Home() {
                 </div>
               ))}
 
-              <div className="rounded-2xl border border-dashed border-white/20 bg-slate-950/20 p-5 text-white/80">
-                <h5 className="text-lg font-semibold text-white">
+              <div className="p-5 text-slate-700">
+                <h5 className="text-lg font-semibold text-slate-900">
                   Join the movement
                 </h5>
-                <p className="mt-2 text-sm text-white/70">
+                <p className="mt-2 text-sm text-slate-700">
                   Download the app, create your profile, and start exploring
                   local opportunities today.
                 </p>
@@ -495,7 +521,7 @@ export default function Home() {
                   >
                     {t("footer.getApp")}
                   </a>
-                  <a href="#help" className="px-4 py-2 text-white/70">
+                  <a href="#help" className="px-4 py-2 text-slate-700">
                     Need help?
                   </a>
                 </div>
@@ -504,95 +530,111 @@ export default function Home() {
           </div>
         </section>
 
-        {/* GLOBAL FOOTER - unchanged */}
-        <footer className="mt-12 border-t border-white/6 pt-8 text-sm text-white/70">
-          <div className="max-w-5xl mx-auto px-4">
-            <div className="flex flex-col md:flex-row md:justify-between gap-6">
+        {/* GLOBAL FOOTER */}
+        <footer className="mt-12 p-6 text-sm text-slate-700 sm:p-8">
+          <div className="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:gap-10">
+            <div>
+              <div className="flex items-center gap-3">
+                <div className="grid h-10 w-10 place-items-center rounded-xl bg-transparent">
+                  <Image
+                    src="/logo.png"
+                    alt="Rapid Job"
+                    width={32}
+                    height={32}
+                    className="object-contain"
+                  />
+                </div>
+                <div>
+                  <div className="text-slate-900 font-semibold">Rapid Job</div>
+                  <div className="text-xs text-slate-600">
+                    Connect local help quickly.
+                  </div>
+                </div>
+              </div>
+              <p className="mt-3 max-w-sm text-xs text-slate-600">
+                Post jobs and claim gigs from the Rapid Job mobile app.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
               <div>
-                <div className="flex items-center gap-3">
-                  <div className="h-9 w-9 rounded-lg grid place-items-center overflow-hidden bg-transparent">
-                    <Image
-                      src="/logo.png"
-                      alt="Rapid Job"
-                      width={36}
-                      height={36}
-                      className="object-contain"
-                    />
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold">Rapid Job</div>
-                    <div className="text-xs text-white/60">
-                      Connect local help quickly.
-                    </div>
-                  </div>
-                </div>
-                <p className="mt-3 text-xs text-white/60">
-                  Post jobs and claim gigs from the Rapid Job mobile app.
-                </p>
+                <h4 className="font-medium text-slate-900">Product</h4>
+                <ul className="mt-2 space-y-2 text-sm">
+                  <li>
+                    <a
+                      href="#download"
+                      className="text-slate-600 transition hover:text-slate-900"
+                    >
+                      Get the app
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-slate-600 transition hover:text-slate-900"
+                    >
+                      Browse Jobs
+                    </a>
+                  </li>
+                </ul>
               </div>
-
-              <div className="grid grid-cols-2 gap-6 sm:grid-cols-3">
-                <div>
-                  <h4 className="font-medium text-white">Product</h4>
-                  <ul className="mt-2 space-y-2">
-                    <li>
-                      <a href="#download" className="hover:text-white">
-                        Get the app
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="hover:text-white">
-                        Browse Jobs
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-medium text-white">Company</h4>
-                  <ul className="mt-2 space-y-2">
-                    <li>
-                      <a href="#" className="hover:text-white">
-                        About
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="hover:text-white">
-                        Careers
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.linkedin.com/company/rapid-jobs-app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-white"
-                      >
-                        LinkedIn
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-medium text-white">Support</h4>
-                  <ul className="mt-2 space-y-2">
-                    <li>
-                      <a href="#" className="hover:text-white">
-                        Help Center
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="hover:text-white">
-                        Privacy
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+              <div>
+                <h4 className="font-medium text-slate-900">Company</h4>
+                <ul className="mt-2 space-y-2 text-sm">
+                  <li>
+                    <a
+                      href="#"
+                      className="text-slate-600 transition hover:text-slate-900"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-slate-600 transition hover:text-slate-900"
+                    >
+                      Careers
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.linkedin.com/company/rapid-jobs-app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-600 transition hover:text-slate-900"
+                    >
+                      LinkedIn
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-medium text-slate-900">Support</h4>
+                <ul className="mt-2 space-y-2 text-sm">
+                  <li>
+                    <a
+                      href="#"
+                      className="text-slate-600 transition hover:text-slate-900"
+                    >
+                      Help Center
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className="text-slate-600 transition hover:text-slate-900"
+                    >
+                      Privacy
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
+          </div>
 
-            <div className="mt-6 text-xs text-white/60">
-              © {new Date().getFullYear()} Rapid Job. All rights reserved.
-            </div>
+          <div className="mt-8 border-t border-slate-200/40 pt-4 text-xs text-slate-600">
+            © {new Date().getFullYear()} Rapid Job. All rights reserved.
           </div>
         </footer>
       </div>
