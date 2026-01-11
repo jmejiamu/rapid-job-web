@@ -14,7 +14,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "hero.beta": "Beta waitlist",
     "hero.title": "Find local help in minutes — post & hire without resumes",
     "hero.subtitle":
-      "Rapid Job is mobile-first — sign up quickly with your phone number (no password), post or claim gigs from the app, and use real-time in-app chat to ask questions and confirm details.",
+      "Rapid Jobs is mobile-first — sign up quickly with your phone number (no password), post or claim gigs from the app, and use real-time in-app chat to ask questions and confirm details.",
     "hero.pill.quick": "⚡ Quick matches",
     "hero.pill.cash": "💸 Cash friendly",
     "hero.pill.phone": "📱 Phone signup",
@@ -30,7 +30,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "about.title": "A faster, safer way to match local help",
     "about.launch": "Launching soon in El Salvador — join the waitlist",
     "about.p1":
-      "Rapid Job connects neighbors who need help with vetted workers ready to earn. Post small gigs, chat inside the app, and track payouts without juggling spreadsheets or paperwork.",
+      "Rapid Jobs connects neighbors who need help with vetted workers ready to earn. Post small gigs, chat inside the app, and track payouts without juggling spreadsheets or paperwork.",
 
     "footer.getApp": "Get the app",
     "download.appstore": "Download on the App Store",
@@ -47,7 +47,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "hero.title":
       "Encuentra ayuda local en minutos — publica y contrata sin currículum",
     "hero.subtitle":
-      "Rapid Job es móvil: regístrate con tu número, publica o acepta trabajos y usa chat en la app para confirmar detalles.",
+      "Rapid Jobs es móvil: regístrate con tu número, publica o acepta trabajos y usa chat en la app para confirmar detalles.",
     "hero.pill.quick": "⚡ Emparejamientos rápidos",
     "hero.pill.cash": "💸 Efectivo bienvenido",
     "hero.pill.phone": "📱 Registro por teléfono",
@@ -63,7 +63,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "about.title": "Una forma más rápida y segura de conseguir ayuda local",
     "about.launch": "Próximamente en El Salvador — únete a la lista de espera",
     "about.p1":
-      "Rapid Job conecta a vecinos que necesitan ayuda con trabajadores verificados listos para ganar. Publica trabajos cortos, chatea en la app y controla pagos sin papeleo.",
+      "Rapid Jobs conecta a vecinos que necesitan ayuda con trabajadores verificados listos para ganar. Publica trabajos cortos, chatea en la app y controla pagos sin papeleo.",
 
     "footer.getApp": "Obtener la app",
     "download.appstore": "Descargar en App Store",

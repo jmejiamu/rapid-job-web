@@ -124,7 +124,7 @@ export default function Home() {
               <div className="h-12 w-12 rounded-2xl shadow-md grid place-items-center overflow-hidden bg-transparent">
                 <Image
                   src="/logo.png"
-                  alt="Rapid Job"
+                  alt="Rapid Jobs"
                   width={44}
                   height={44}
                   className="object-cover"
@@ -132,7 +132,7 @@ export default function Home() {
               </div>
               <div>
                 <h1 className="text-2xl font-extrabold tracking-tight text-slate-900">
-                  Rapid Job
+                  Rapid Jobs
                 </h1>
                 <p className="text-xs text-slate-600">
                   Small gigs. Fast pay. No resume required.
@@ -444,7 +444,7 @@ export default function Home() {
               <span className="inline-flex items-center gap-2 rounded-full border border-slate-200/40 bg-slate-100/60 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-slate-700">
                 About
                 <span className="h-1 w-1 rounded-full bg-emerald-400" />
-                Rapid Job
+                Rapid Jobs
               </span>
               <h3 className="text-3xl font-semibold text-slate-900">
                 {t("about.title")}
@@ -474,7 +474,7 @@ export default function Home() {
               </div>
 
               <div className="rounded-2xl border-l-4 border-emerald-400/60 bg-slate-50 p-5 text-sm text-slate-700 shadow-[0_10px_30px_rgba(2,6,23,0.04)]">
-                “We created Rapid Job so everyday people can request help in a
+                “We created Rapid Jobs so everyday people can request help in a
                 few taps while giving workers dependable income without
                 red-tape.”
               </div>
@@ -545,14 +545,14 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <div className="text-slate-900 font-semibold">Rapid Job</div>
+                  <div className="text-slate-900 font-semibold">Rapid Jobs</div>
                   <div className="text-xs text-slate-600">
                     Connect local help quickly.
                   </div>
                 </div>
               </div>
               <p className="mt-3 max-w-sm text-xs text-slate-600">
-                Post jobs and claim gigs from the Rapid Job mobile app.
+                Post jobs and claim gigs from the Rapid Jobs mobile app.
               </p>
             </div>
 
@@ -628,13 +628,23 @@ export default function Home() {
                       Privacy
                     </a>
                   </li>
+
+                  {/* added support email */}
+                  <li>
+                    <a
+                      href="mailto:support@rapidjobsapp.com"
+                      className="text-slate-600 transition hover:text-slate-900"
+                    >
+                      support@rapidjobsapp.com
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
 
           <div className="mt-8 border-t border-slate-200/40 pt-4 text-xs text-slate-600">
-            © {new Date().getFullYear()} Rapid Job. All rights reserved.
+            © {new Date().getFullYear()} Rapid Jobs. All rights reserved.
           </div>
         </footer>
       </div>
