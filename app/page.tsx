@@ -186,12 +186,12 @@ export default function Home() {
                 </button>
               </div>
 
-              <a
+              {/* <a
                 href="#download"
                 className="ml-2 rounded-full bg-emerald-400 px-3 py-1 text-sm font-semibold text-slate-900 shadow-sm"
               >
                 {t("nav.getApp")}
-              </a>
+              </a> */}
             </div>
 
             {/* Mobile menu placeholder */}
